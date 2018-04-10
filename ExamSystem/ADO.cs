@@ -18,7 +18,8 @@ namespace ExamSystem
             InitializeComponent();
         }
         
-        string strcon = "Password=123456;Persist Security Info=True;User ID=test;Initial Catalog=test;Data Source=.";
+        static string strcon = "Password=123456;Persist Security Info=True;User ID=test;Initial Catalog=test;Data Source=.";
+        SqlConnection sqlcon = new SqlConnection(strcon);
 
         private void ADO_Load(object sender, EventArgs e)//窗体加载事件
         {
@@ -27,7 +28,6 @@ namespace ExamSystem
 
         private void CommonDataView()
         {
-            SqlConnection sqlcon = new SqlConnection(strcon);
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter
                 ("select username as 用户名,pwd as 密码,name as 真实姓名 from EmailUsers", sqlcon);
             DataSet dataSet = new DataSet();//创建数据集
@@ -56,7 +56,6 @@ namespace ExamSystem
 
         private void Btn_Insert_Click(object sender, EventArgs e)//增加按钮事件
         {
-            SqlConnection sqlcon = new SqlConnection(strcon);
             sqlcon.Open();
             SqlCommand insertCommand = new SqlCommand
                 (String.Format("insert into EmailUsers values('{0}','{1}','{2}')",
@@ -68,7 +67,6 @@ namespace ExamSystem
 
         private void Btn_Delete_Click(object sender, EventArgs e)//删除按钮事件
         {
-            SqlConnection sqlcon = new SqlConnection(strcon);
             sqlcon.Open();
             SqlCommand deleteCommand = new SqlCommand
                 (String.Format("delete from EmailUsers where username='{0}'",
@@ -80,7 +78,6 @@ namespace ExamSystem
 
         private void Btn_Update_Click(object sender, EventArgs e)//修改按钮事件
         {
-            SqlConnection sqlcon = new SqlConnection(strcon);
             sqlcon.Open();
             SqlCommand updatetCommand = new SqlCommand
                 (String.Format("update EmailUsers set pwd='{0}',name='{1}' where username='{2}'",
@@ -92,7 +89,6 @@ namespace ExamSystem
 
         private void Btn_Select_Click(object sender, EventArgs e)//查询按钮事件
         {
-            SqlConnection sqlcon = new SqlConnection(strcon);
             sqlcon.Open();
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter
                 (String.Format("select username as 用户名,pwd as 密码,name as 真实姓名 from EmailUsers where username like '%{0}%'",
@@ -105,7 +101,6 @@ namespace ExamSystem
 
         private Boolean DBUpdate()//将DataGridView1的数据更新到数据库的方法
         {
-            SqlConnection sqlcon = new SqlConnection(strcon);
             string strsql = "select username as 用户名,pwd as 密码,name as 姓名 from EmailUsers";
             DataTable dataTableUpdate = new DataTable();//新建一个用于将DataGridView1数据操作更新到数据库的内存表
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(strsql,sqlcon);
@@ -169,7 +164,6 @@ namespace ExamSystem
         private void BtnSort_Click(object sender, EventArgs e)//视图排序事件
         {
             //创建数据集
-            SqlConnection sqlcon = new SqlConnection(strcon);
             string strsql = "select username as 用户名,pwd as 密码,name as 姓名 from EmailUsers";
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(strsql, sqlcon);
             DataSet dataSet = new DataSet();
@@ -197,7 +191,6 @@ namespace ExamSystem
         private void BtnFilter_Click(object sender, EventArgs e)//视图筛选事件
         {
             //创建数据集
-            SqlConnection sqlcon = new SqlConnection(strcon);
             string strsql = "select username as 用户名,pwd as 密码,name as 姓名 from EmailUsers";
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(strsql, sqlcon);
             DataSet dataSet = new DataSet();
