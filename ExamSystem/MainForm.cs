@@ -492,6 +492,18 @@ namespace ExamSystem
             AboutBox1 AboutFrm = new AboutBox1();
             AboutFrm.ShowDialog();//模态方式打开窗体
         }
+
+        private void OpenADO_Click(object sender, EventArgs e)
+        {
+            ADO ado = new ADO();
+            ado.Show();
+        }
+
+        private void OpenPCD_Click(object sender, EventArgs e)
+        {
+            PCD pcd = new PCD();
+            pcd.Show();
+        }
     }
 }
 //访问Windows窗体控件本质上不是线程安全的,如果由两个或多个线程同时操作某一控件时

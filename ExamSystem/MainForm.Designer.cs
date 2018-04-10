@@ -59,6 +59,8 @@
             this.Convey = new System.Windows.Forms.ListBox();
             this.ShowCharRichBox2 = new System.Windows.Forms.RichTextBox();
             this.ShowCharRichBox3 = new System.Windows.Forms.RichTextBox();
+            this.OpenADO = new System.Windows.Forms.Button();
+            this.OpenPCD = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -252,7 +254,7 @@
             // 
             this.Stop.Location = new System.Drawing.Point(12, 277);
             this.Stop.Name = "Stop";
-            this.Stop.Size = new System.Drawing.Size(100, 47);
+            this.Stop.Size = new System.Drawing.Size(100, 50);
             this.Stop.TabIndex = 6;
             this.Stop.Text = "终止所有线程\r\n单击后两个数值未必相等";
             this.Stop.UseVisualStyleBackColor = true;
@@ -262,7 +264,7 @@
             // 
             this.Restart.Location = new System.Drawing.Point(118, 277);
             this.Restart.Name = "Restart";
-            this.Restart.Size = new System.Drawing.Size(100, 47);
+            this.Restart.Size = new System.Drawing.Size(100, 50);
             this.Restart.TabIndex = 7;
             this.Restart.Text = "重启所有线程\r\n重新实例化线程对象并启动";
             this.Restart.UseVisualStyleBackColor = true;
@@ -328,11 +330,33 @@
             this.ShowCharRichBox3.TabIndex = 14;
             this.ShowCharRichBox3.Text = "";
             // 
+            // OpenADO
+            // 
+            this.OpenADO.Location = new System.Drawing.Point(14, 330);
+            this.OpenADO.Name = "OpenADO";
+            this.OpenADO.Size = new System.Drawing.Size(100, 50);
+            this.OpenADO.TabIndex = 15;
+            this.OpenADO.Text = "打开ADO窗体";
+            this.OpenADO.UseVisualStyleBackColor = true;
+            this.OpenADO.Click += new System.EventHandler(this.OpenADO_Click);
+            // 
+            // OpenPCD
+            // 
+            this.OpenPCD.Location = new System.Drawing.Point(14, 383);
+            this.OpenPCD.Name = "OpenPCD";
+            this.OpenPCD.Size = new System.Drawing.Size(100, 50);
+            this.OpenPCD.TabIndex = 16;
+            this.OpenPCD.Text = "打开省市区\r\n选择窗体";
+            this.OpenPCD.UseVisualStyleBackColor = true;
+            this.OpenPCD.Click += new System.EventHandler(this.OpenPCD_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.OpenPCD);
+            this.Controls.Add(this.OpenADO);
             this.Controls.Add(this.ShowCharRichBox3);
             this.Controls.Add(this.ShowCharRichBox2);
             this.Controls.Add(this.Convey);
@@ -399,6 +423,8 @@
         private System.Windows.Forms.ListBox Production;
         private System.Windows.Forms.RichTextBox ShowCharRichBox2;
         private System.Windows.Forms.RichTextBox ShowCharRichBox3;
+        private System.Windows.Forms.Button OpenADO;
+        private System.Windows.Forms.Button OpenPCD;
     }
 }
 
