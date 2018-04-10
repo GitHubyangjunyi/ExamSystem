@@ -40,7 +40,6 @@
             this.Btn_Delete = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.Btn_Insert = new System.Windows.Forms.Button();
-            this.L1 = new System.Windows.Forms.Label();
             this.GroupBox3 = new System.Windows.Forms.GroupBox();
             this.BtnFilter = new System.Windows.Forms.Button();
             this.BtnSort = new System.Windows.Forms.Button();
@@ -174,16 +173,6 @@
             this.Btn_Insert.UseVisualStyleBackColor = true;
             this.Btn_Insert.Click += new System.EventHandler(this.Btn_Insert_Click);
             // 
-            // L1
-            // 
-            this.L1.AutoSize = true;
-            this.L1.Font = new System.Drawing.Font("宋体", 10F);
-            this.L1.Location = new System.Drawing.Point(1, 266);
-            this.L1.Name = "L1";
-            this.L1.Size = new System.Drawing.Size(14, 14);
-            this.L1.TabIndex = 3;
-            this.L1.Text = "s";
-            // 
             // GroupBox3
             // 
             this.GroupBox3.Controls.Add(this.BtnFilter);
@@ -191,7 +180,7 @@
             this.GroupBox3.Controls.Add(this.RadioButtonName);
             this.GroupBox3.Controls.Add(this.RadioButtonPwd);
             this.GroupBox3.Controls.Add(this.RadioButtonUsername);
-            this.GroupBox3.Location = new System.Drawing.Point(443, 399);
+            this.GroupBox3.Location = new System.Drawing.Point(443, 249);
             this.GroupBox3.Name = "GroupBox3";
             this.GroupBox3.Size = new System.Drawing.Size(300, 150);
             this.GroupBox3.TabIndex = 4;
@@ -255,7 +244,7 @@
             // 
             this.GroupBox4.Controls.Add(this.BtnExportToExcel);
             this.GroupBox4.Controls.Add(this.BtnEditData);
-            this.GroupBox4.Location = new System.Drawing.Point(12, 449);
+            this.GroupBox4.Location = new System.Drawing.Point(12, 261);
             this.GroupBox4.Name = "GroupBox4";
             this.GroupBox4.Size = new System.Drawing.Size(200, 100);
             this.GroupBox4.TabIndex = 5;
@@ -284,7 +273,7 @@
             // 
             // BtnUserNumberCount
             // 
-            this.BtnUserNumberCount.Location = new System.Drawing.Point(273, 471);
+            this.BtnUserNumberCount.Location = new System.Drawing.Point(273, 283);
             this.BtnUserNumberCount.Name = "BtnUserNumberCount";
             this.BtnUserNumberCount.Size = new System.Drawing.Size(90, 35);
             this.BtnUserNumberCount.TabIndex = 6;
@@ -299,7 +288,6 @@
             this.Controls.Add(this.BtnUserNumberCount);
             this.Controls.Add(this.GroupBox4);
             this.Controls.Add(this.GroupBox3);
-            this.Controls.Add(this.L1);
             this.Controls.Add(this.GroupBox2);
             this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.DataGridView1);
@@ -314,7 +302,6 @@
             this.GroupBox3.PerformLayout();
             this.GroupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -332,7 +319,6 @@
         private System.Windows.Forms.Button Btn_Delete;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button Btn_Insert;
-        private System.Windows.Forms.Label L1;
         private System.Windows.Forms.GroupBox GroupBox3;
         private System.Windows.Forms.GroupBox GroupBox4;
         private System.Windows.Forms.Button BtnExportToExcel;
