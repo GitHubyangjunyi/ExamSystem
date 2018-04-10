@@ -21,7 +21,7 @@ namespace ExamSystem
         static string strcon = "Password=123456;Persist Security Info=True;User ID=test;Initial Catalog=test;Data Source=.";
         SqlConnection sqlcon = new SqlConnection(strcon);
 
-        private void ADO_Load(object sender, EventArgs e)//窗体加载事件
+        private void ADO_Load(object sender, EventArgs e)
         {
             CommonDataView();//窗体加载时初始化并显示数据表原始数据
         }
@@ -102,10 +102,10 @@ namespace ExamSystem
         private Boolean DBUpdate()//将DataGridView1的数据更新到数据库的方法
         {
             string strsql = "select username as 用户名,pwd as 密码,name as 姓名 from EmailUsers";
-            DataTable dataTableUpdate = new DataTable();//新建一个用于将DataGridView1数据操作更新到数据库的内存表
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(strsql,sqlcon);
+            DataTable dataTableUpdate = new DataTable();//新建一个用于将DataGridView1数据操作更新到数据库的内存表
             sqlDataAdapter.Fill(dataTableUpdate);
-            dataTableUpdate.Rows.Clear();//初始化的数据清除以存放更新后的DataGridView1数据
+            dataTableUpdate.Rows.Clear();//初始化的数据清除剩下表结构以存放更新后的DataGridView1数据
             DataTable dataTableShow = new DataTable();//新建一个内存表将更新后的DataGridView1数据逐条读取并更新内存表
             dataTableShow = (DataTable)DataGridView1.DataSource;
             for (int i = 0; i < dataTableShow.Rows.Count; i++)
@@ -118,6 +118,7 @@ namespace ExamSystem
                 //使对DataSet所作的更改与关联的SQL Server数据库相协调
                 SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(sqlDataAdapter);
                 //通过sqlDataAdapter将更新后的DataGridView1数据(即已经复制的dataTableUpdate)更新到数据库
+                //自己加的,没有解决问题sqlDataAdapter.UpdateCommand = sqlCommandBuilder.GetUpdateCommand();
                 sqlDataAdapter.Update(dataTableUpdate);
                 sqlcon.Close();
             }
