@@ -23,12 +23,14 @@ namespace ExamSystem
             CommonDataView();//窗体加载时初始化并显示数据表原始数据
         }
 
+        static string strcon = "Password=123456;Persist Security Info=True;User ID=test;Initial Catalog=test;Data Source=.";
+        SqlConnection sqlcon = new SqlConnection(strcon);
+        
+
         private void CommonDataView()
         {
-            string strcon = "Password=123456;Persist Security Info=True;User ID=test;Initial Catalog=test;Data Source=.";
-            SqlConnection sqlcon = new SqlConnection(strcon);
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter
-                ("select username as 用户名,pwd as 密码,name as 真实姓名 from EmailUsers", sqlcon);
+                ("select username as 用户名,password as 密码,realname as 真实姓名 from EmailUsers", sqlcon);
             DataSet dataSet = new DataSet();//创建数据集
             try
             {
@@ -85,7 +87,7 @@ namespace ExamSystem
             SqlConnection sqlcon = new SqlConnection(strcon);
             sqlcon.Open();
             SqlCommand updatetCommand = new SqlCommand
-                (String.Format("update EmailUsers set pwd='{0}',name='{1}' where username='{2}'",
+                (String.Format("update EmailUsers set password='{0}',realname='{1}' where username='{2}'",
                 TextBox_Pwd.Text, TextBox_Name.Text,ComboBox_SelectUsername.Text),sqlcon);
             updatetCommand.ExecuteNonQuery();
             sqlcon.Close();
@@ -98,7 +100,7 @@ namespace ExamSystem
             SqlConnection sqlcon = new SqlConnection(strcon);
             sqlcon.Open();
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter
-                (String.Format("select username as 用户名,pwd as 密码,name as 真实姓名 from EmailUsers where username like '%{0}%'",
+                (String.Format("select username as 用户名,password as 密码,realname as 真实姓名 from EmailUsers where username like '%{0}%'",
                 ComboBox_SelectUsername.Text),sqlcon);
             DataSet dataSet = new DataSet();//创建数据集
             sqlDataAdapter.Fill(dataSet, "tablename");
@@ -110,7 +112,7 @@ namespace ExamSystem
         {
             string strcon = "Password=123456;Persist Security Info=True;User ID=test;Initial Catalog=test;Data Source=.";
             SqlConnection sqlcon = new SqlConnection(strcon);
-            string strsql = "select username as 用户名,pwd as 密码,name as 姓名 from EmailUsers";
+            string strsql = "select username as 用户名,password as 密码,realname as 姓名 from EmailUsers";
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(strsql,sqlcon);
             DataTable dataTableUpdate = new DataTable();//新建一个用于将DataGridView1数据操作更新到数据库的内存表
             sqlDataAdapter.Fill(dataTableUpdate);
@@ -127,7 +129,6 @@ namespace ExamSystem
                 //使对DataSet所作的更改与关联的SQL Server数据库相协调
                 SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(sqlDataAdapter);
                 //通过sqlDataAdapter将更新后的DataGridView1数据(即已经复制的dataTableUpdate)更新到数据库
-                //自己加的,没有解决问题sqlDataAdapter.UpdateCommand = sqlCommandBuilder.GetUpdateCommand();
                 sqlDataAdapter.Update(dataTableUpdate);
                 sqlcon.Close();
             }
@@ -176,7 +177,7 @@ namespace ExamSystem
             string strcon = "Password=123456;Persist Security Info=True;User ID=test;Initial Catalog=test;Data Source=.";
             SqlConnection sqlcon = new SqlConnection(strcon);
             //创建数据集
-            string strsql = "select username as 用户名,pwd as 密码,name as 姓名 from EmailUsers";
+            string strsql = "select username as 用户名,password as 密码,realname as 姓名 from EmailUsers";
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(strsql, sqlcon);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet,"tablename");
@@ -205,7 +206,7 @@ namespace ExamSystem
             string strcon = "Password=123456;Persist Security Info=True;User ID=test;Initial Catalog=test;Data Source=.";
             SqlConnection sqlcon = new SqlConnection(strcon);
             //创建数据集
-            string strsql = "select username as 用户名,pwd as 密码,name as 姓名 from EmailUsers";
+            string strsql = "select username as 用户名,password as 密码,realname as 姓名 from EmailUsers";
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(strsql, sqlcon);
             DataSet dataSet = new DataSet();
             sqlDataAdapter.Fill(dataSet, "tablename");

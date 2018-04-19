@@ -40,7 +40,7 @@ namespace ExamSystem
         
         private void StartPowerShell1_Click(object sender, EventArgs e)
         {
-            process1.Start();
+            Process1.Start();
         }
 
         private void StartPowerShell2_Click(object sender, EventArgs e)
@@ -503,6 +503,12 @@ namespace ExamSystem
         {
             PCD pcd = new PCD();
             pcd.Show();
+        }
+
+        private void OpenADO2_Click(object sender, EventArgs e)
+        {
+            ADO2 ado2 = new ADO2();
+            ado2.Show();
         }
     }
 }

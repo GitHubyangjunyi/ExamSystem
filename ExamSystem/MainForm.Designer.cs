@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.MenuStrip1 = new System.Windows.Forms.MenuStrip();
             this.文件FToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.题型选择ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,13 +38,13 @@
             this.高级自测试题HToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.帮助HToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关于系统AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.ToolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.StartPowerShell1 = new System.Windows.Forms.Button();
             this.StartPowerShell2 = new System.Windows.Forms.Button();
             this.StopPowerShell = new System.Windows.Forms.Button();
-            this.process1 = new System.Diagnostics.Process();
+            this.Process1 = new System.Diagnostics.Process();
             this.L = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -61,21 +61,22 @@
             this.ShowCharRichBox3 = new System.Windows.Forms.RichTextBox();
             this.OpenADO = new System.Windows.Forms.Button();
             this.OpenPCD = new System.Windows.Forms.Button();
-            this.menuStrip1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.OpenADO2 = new System.Windows.Forms.Button();
+            this.MenuStrip1.SuspendLayout();
+            this.ToolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // MenuStrip1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.文件FToolStripMenuItem,
             this.题型选择ToolStripMenuItem,
             this.帮助HToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(784, 25);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.MenuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.MenuStrip1.Name = "MenuStrip1";
+            this.MenuStrip1.Size = new System.Drawing.Size(784, 25);
+            this.MenuStrip1.TabIndex = 0;
+            this.MenuStrip1.Text = "menuStrip1";
             // 
             // 文件FToolStripMenuItem
             // 
@@ -136,16 +137,16 @@
             this.关于系统AToolStripMenuItem.Text = "关于系统(&A)";
             this.关于系统AToolStripMenuItem.Click += new System.EventHandler(this.关于系统AToolStripMenuItem_Click);
             // 
-            // toolStrip1
+            // ToolStrip1
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripComboBox1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 25);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(784, 25);
-            this.toolStrip1.TabIndex = 1;
-            this.toolStrip1.Text = "toolStrip1";
+            this.ToolStrip1.Location = new System.Drawing.Point(0, 25);
+            this.ToolStrip1.Name = "ToolStrip1";
+            this.ToolStrip1.Size = new System.Drawing.Size(784, 25);
+            this.ToolStrip1.TabIndex = 1;
+            this.ToolStrip1.Text = "toolStrip1";
             // 
             // toolStripButton1
             // 
@@ -198,16 +199,16 @@
             this.StopPowerShell.UseVisualStyleBackColor = true;
             this.StopPowerShell.Click += new System.EventHandler(this.StopPowerShell_Click);
             // 
-            // process1
+            // Process1
             // 
-            this.process1.StartInfo.Domain = "";
-            this.process1.StartInfo.FileName = "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe";
-            this.process1.StartInfo.LoadUserProfile = false;
-            this.process1.StartInfo.Password = null;
-            this.process1.StartInfo.StandardErrorEncoding = null;
-            this.process1.StartInfo.StandardOutputEncoding = null;
-            this.process1.StartInfo.UserName = "";
-            this.process1.SynchronizingObject = this;
+            this.Process1.StartInfo.Domain = "";
+            this.Process1.StartInfo.FileName = "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe";
+            this.Process1.StartInfo.LoadUserProfile = false;
+            this.Process1.StartInfo.Password = null;
+            this.Process1.StartInfo.StandardErrorEncoding = null;
+            this.Process1.StartInfo.StandardOutputEncoding = null;
+            this.Process1.StartInfo.UserName = "";
+            this.Process1.SynchronizingObject = this;
             // 
             // L
             // 
@@ -350,11 +351,22 @@
             this.OpenPCD.UseVisualStyleBackColor = true;
             this.OpenPCD.Click += new System.EventHandler(this.OpenPCD_Click);
             // 
+            // OpenADO2
+            // 
+            this.OpenADO2.Location = new System.Drawing.Point(120, 333);
+            this.OpenADO2.Name = "OpenADO2";
+            this.OpenADO2.Size = new System.Drawing.Size(98, 47);
+            this.OpenADO2.TabIndex = 17;
+            this.OpenADO2.Text = "打开ADO窗体2";
+            this.OpenADO2.UseVisualStyleBackColor = true;
+            this.OpenADO2.Click += new System.EventHandler(this.OpenADO2_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.OpenADO2);
             this.Controls.Add(this.OpenPCD);
             this.Controls.Add(this.OpenADO);
             this.Controls.Add(this.ShowCharRichBox3);
@@ -374,18 +386,18 @@
             this.Controls.Add(this.StopPowerShell);
             this.Controls.Add(this.StartPowerShell2);
             this.Controls.Add(this.StartPowerShell1);
-            this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.ToolStrip1);
+            this.Controls.Add(this.MenuStrip1);
+            this.MainMenuStrip = this.MenuStrip1;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "考试系统";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.MenuStrip1.ResumeLayout(false);
+            this.MenuStrip1.PerformLayout();
+            this.ToolStrip1.ResumeLayout(false);
+            this.ToolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -393,7 +405,7 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip MenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 文件FToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 题型选择ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 退出XToolStripMenuItem;
@@ -402,13 +414,13 @@
         private System.Windows.Forms.ToolStripMenuItem 高级自测试题HToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 帮助HToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 关于系统AToolStripMenuItem;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip ToolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.Button StartPowerShell1;
         private System.Windows.Forms.Button StartPowerShell2;
         private System.Windows.Forms.Button StopPowerShell;
-        private System.Diagnostics.Process process1;
+        private System.Diagnostics.Process Process1;
         private System.Windows.Forms.Label L;
         private System.Windows.Forms.Button Stop;
         private System.Windows.Forms.TextBox CountertBox2;
@@ -425,6 +437,7 @@
         private System.Windows.Forms.RichTextBox ShowCharRichBox3;
         private System.Windows.Forms.Button OpenADO;
         private System.Windows.Forms.Button OpenPCD;
+        private System.Windows.Forms.Button OpenADO2;
     }
 }
 

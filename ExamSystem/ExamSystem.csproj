@@ -69,6 +69,12 @@
     <Compile Include="ADO.Designer.cs">
       <DependentUpon>ADO.cs</DependentUpon>
     </Compile>
+    <Compile Include="ADO2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADO2.Designer.cs">
+      <DependentUpon>ADO2.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
