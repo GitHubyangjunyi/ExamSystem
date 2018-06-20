@@ -190,18 +190,19 @@ namespace ExamSystem
         {
             while (true)
             {
+                //以下为原版代码实现
                 //mutex1.WaitOne();
                 //try
                 //{
                 //    ShowCharRichBox3.Text += "C";
-                //    //mutex1.WaitOne();
                 //}
                 //catch (Exception)
                 //{
                 //    mutex1.ReleaseMutex();
                 //}
                 //mutex1.ReleaseMutex();
-                mutex1.WaitOne();//这个方法用来捕获互斥对象
+                //Thread.Sleep(300);
+                mutex1.WaitOne();//这个方法用来捕获互斥对象,阻止当前线程直到当前System.Threading.WaitHandle收到信号
                 try
                 {
                     ShowCharRichBox3.Text += "C";
@@ -225,19 +226,19 @@ namespace ExamSystem
         {
             while (true)
             {
+                //以下为原版代码实现
                 //mutex1.WaitOne();
                 //try
                 //{
                 //    ShowCharRichBox3.Text += "Z";
-                //    //mutex1.WaitOne();
-                //    //
                 //}
                 //catch (Exception)
                 //{
                 //    mutex1.ReleaseMutex();
                 //}
                 //mutex1.ReleaseMutex();
-                mutex1.WaitOne();//这个方法用来捕获互斥对象
+                //Thread.Sleep(600);
+                mutex1.WaitOne();//这个方法用来捕获互斥对象,阻止当前线程直到当前System.Threading.WaitHandle收到信号
                 try
                 {
                     ShowCharRichBox3.Text += "Z";
@@ -246,7 +247,7 @@ namespace ExamSystem
                 {
                     mutex1.ReleaseMutex();
                 }
-                mutex1.ReleaseMutex();//这个方法用来释放被捕获的对象,这句放catch后是书上的
+                mutex1.ReleaseMutex();//这个方法用来释放被捕获的对象,这句再一次放catch后是书上的
                 Thread.Sleep(600);
                 //在使用方法上,Mutex与Monitor类似,但是由于Mutex不具备Wait()和Pulse()以及PulseALL()的方法
                 //因此不能实现类似Monitor的唤醒功能
@@ -260,7 +261,7 @@ namespace ExamSystem
         {
             while (!blStopProduce)
             {
-                lock (product)
+                lock (product)//理解为获得这个对象使用权才可以运行下面的代码,可以将这个改成锁定当前窗体this,会产生其他线程运行缓慢的情况
                 {
                     for (int i = 1; i <= iMaxProduct; i++)
                     {
@@ -275,9 +276,10 @@ namespace ExamSystem
                             blStopProduce = true;
                         }
                         Thread.Sleep(1000);
-                        Monitor.Pulse(product);
-                        Monitor.Wait(product);
-                        //可以尝试把上面两句注释掉在运行,程序将不按预期
+                        Monitor.Pulse(product);//通知等待队列中的线程锁定对象状态的更改
+                        Monitor.Wait(product);//释放对象上的锁并阻止当前线程,直到它重新获取该锁
+                        //方法wait()的作用是使当前执行代码的线程进行等待,并在wait()所在代码行处停止直到接到通知或者线程被中断为止
+                        //可以尝试把上面两句注释掉再运行,程序将不按预期
                         //或者放到for语句外面,那将会导致程序将不按预期
                         //Monitor提供了与lock类似的功能,通过向单个线程授予对象锁来控制对该对象的访问
                         //与lock相比,lock的代码块就相当于Monitor的Ente()和Exit()方法的封装
@@ -298,7 +300,7 @@ namespace ExamSystem
         {
             while (true)
             {
-                lock (product)
+                lock (product)//理解为获得这个对象使用权才可以运行下面的代码,可以将这个改成锁定当前窗体this,会产生其他线程运行缓慢的情况
                 {
                     iConvey = iConvey + iNewProduct;
                     this.Convey.Items.Add(iConvey.ToString());
@@ -309,10 +311,9 @@ namespace ExamSystem
                         this.Convey.Items.Add("装运完成");
                     }
                     Thread.Sleep(1000);
-                    Monitor.Pulse(product);
-                    Monitor.Wait(product);
-                    //可以尝试把上面两句注释掉在运行,程序将不按预期
-                    //或者放到for语句外面,那将会导致程序将不按预期
+                    Monitor.Pulse(product);//Pulse(脉搏)通知等待队列中的线程锁定对象状态的更改
+                    Monitor.Wait(product);//释放对象上的锁并阻止当前线程,直到它重新获取该锁
+                    //可以尝试把上面两句注释掉再运行,程序将不按预期
                     //Monitor提供了与lock类似的功能,通过向单个线程授予对象锁来控制对该对象的访问
                     //与lock相比,lock的代码块就相当于Monitor的Ente()和Exit()方法的封装
                     //lock更简洁,但是Monitor能更好控制同步块
@@ -383,7 +384,9 @@ namespace ExamSystem
             this.Restart.Enabled = false;
             thread_counter1 = new Thread(new ThreadStart(Counter1));
             thread_counter2 = new Thread(new ThreadStart(Counter2));
-            thread_counter1.Start();
+            thread_counter1.Start();//线程调用start方法后并不是已经开始运行
+            //调用这个方法后系统开始分配一些资源使这个线程进入可运行状态
+            //一个线程正真什么时候运行是cpu决定的,我们控制不了,我们只可以设置线程的优先级,优先级高的,一般来说会先执行
             thread_counter2.Start();
             thread_lock1 = new Thread(new ThreadStart(Thread_lock1_ShowChar));
             thread_lock2 = new Thread(new ThreadStart(Thread_lock2_ShowChar));
