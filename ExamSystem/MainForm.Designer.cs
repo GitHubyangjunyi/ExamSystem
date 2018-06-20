@@ -61,7 +61,7 @@
             this.ShowCharRichBox3 = new System.Windows.Forms.RichTextBox();
             this.OpenADO = new System.Windows.Forms.Button();
             this.OpenPCD = new System.Windows.Forms.Button();
-            this.OpenADO2 = new System.Windows.Forms.Button();
+            this.OpenGDIDemo = new System.Windows.Forms.Button();
             this.MenuStrip1.SuspendLayout();
             this.ToolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -351,22 +351,22 @@
             this.OpenPCD.UseVisualStyleBackColor = true;
             this.OpenPCD.Click += new System.EventHandler(this.OpenPCD_Click);
             // 
-            // OpenADO2
+            // OpenGDIDemo
             // 
-            this.OpenADO2.Location = new System.Drawing.Point(120, 333);
-            this.OpenADO2.Name = "OpenADO2";
-            this.OpenADO2.Size = new System.Drawing.Size(98, 47);
-            this.OpenADO2.TabIndex = 17;
-            this.OpenADO2.Text = "打开ADO窗体2";
-            this.OpenADO2.UseVisualStyleBackColor = true;
-            this.OpenADO2.Click += new System.EventHandler(this.OpenADO2_Click);
+            this.OpenGDIDemo.Location = new System.Drawing.Point(14, 439);
+            this.OpenGDIDemo.Name = "OpenGDIDemo";
+            this.OpenGDIDemo.Size = new System.Drawing.Size(100, 50);
+            this.OpenGDIDemo.TabIndex = 17;
+            this.OpenGDIDemo.Text = "打开GDI";
+            this.OpenGDIDemo.UseVisualStyleBackColor = true;
+            this.OpenGDIDemo.Click += new System.EventHandler(this.OpenGDIDemo_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.OpenADO2);
+            this.Controls.Add(this.OpenGDIDemo);
             this.Controls.Add(this.OpenPCD);
             this.Controls.Add(this.OpenADO);
             this.Controls.Add(this.ShowCharRichBox3);
@@ -437,7 +437,7 @@
         private System.Windows.Forms.RichTextBox ShowCharRichBox3;
         private System.Windows.Forms.Button OpenADO;
         private System.Windows.Forms.Button OpenPCD;
-        private System.Windows.Forms.Button OpenADO2;
+        private System.Windows.Forms.Button OpenGDIDemo;
     }
 }
 

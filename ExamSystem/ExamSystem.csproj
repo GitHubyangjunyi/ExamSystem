@@ -69,11 +69,11 @@
     <Compile Include="ADO.Designer.cs">
       <DependentUpon>ADO.cs</DependentUpon>
     </Compile>
-    <Compile Include="ADO2.cs">
+    <Compile Include="GDIDemo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ADO2.Designer.cs">
-      <DependentUpon>ADO2.cs</DependentUpon>
+    <Compile Include="GDIDemo.Designer.cs">
+      <DependentUpon>GDIDemo.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -100,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ADO.resx">
       <DependentUpon>ADO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GDIDemo.resx">
+      <DependentUpon>GDIDemo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

@@ -1,6 +1,6 @@
 ﻿namespace ExamSystem
 {
-    partial class ADO2
+    partial class GDIDemo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // GDIDemo
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "ADO2";
+            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Name = "GDIDemo";
+            this.Text = "GDIDemo";
+            this.Load += new System.EventHandler(this.GDIDemo_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.GDIDemo_Paint);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

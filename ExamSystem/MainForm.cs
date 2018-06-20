@@ -505,10 +505,10 @@ namespace ExamSystem
             pcd.Show();
         }
 
-        private void OpenADO2_Click(object sender, EventArgs e)
+        private void OpenGDIDemo_Click(object sender, EventArgs e)
         {
-            ADO2 ado2 = new ADO2();
-            ado2.Show();
+            GDIDemo gDIDemo = new GDIDemo();
+            gDIDemo.Show();
         }
     }
 }

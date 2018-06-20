@@ -267,7 +267,7 @@
             this.BtnEditData.Name = "BtnEditData";
             this.BtnEditData.Size = new System.Drawing.Size(75, 35);
             this.BtnEditData.TabIndex = 0;
-            this.BtnEditData.Text = "编辑数据\r\n有bug";
+            this.BtnEditData.Text = "编辑数据";
             this.BtnEditData.UseVisualStyleBackColor = true;
             this.BtnEditData.Click += new System.EventHandler(this.BtnEditData_Click);
             // 
