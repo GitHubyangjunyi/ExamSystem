@@ -29,7 +29,7 @@ namespace ExamSystem
         private Thread thread_monitor2 = null;
         private Thread thread_mutex1 = null;//这两个线程对象用于Mutex类测试
         private Thread thread_mutex2 = null;
-        private Mutex mutex1 = new Mutex();//直接实例化Mutex对象
+        private Mutex mutex1 = new Mutex();//直接实例化Mutex(互斥器)对象
         private Thread thread_produce = null;//这两个线程对象用于生产和装运线程对象
         private Thread thread_convey = null;
         static object product = new object();//创建一个互斥体对象令牌
@@ -127,7 +127,7 @@ namespace ExamSystem
             }
         }
 
-        private void Thread_monitor1_ShowChar()
+        private void Thread_monitor1_ShowChar()//Monitor监视器
         {
             while (true)
             {
@@ -157,7 +157,7 @@ namespace ExamSystem
             }
         }
 
-        private void Thread_monitor2_ShowChar()
+        private void Thread_monitor2_ShowChar()//Monitor监视器
         {
             while (true)
             {
